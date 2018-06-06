@@ -1,5 +1,16 @@
 .title {
   font-family: 'Audiowide', cursive;
   text-align: center;
-  color: #00FFFF;
+  font-size: 75px;
+}
+
+.para {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    line-height: 1.4em;
+
+
+}
+.vid {
+    
 }
