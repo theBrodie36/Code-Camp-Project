@@ -1,16 +1,36 @@
+body {
+  background-image: url(https://static1.squarespace.com/static/57fac107e58c6208093f6abe/t/58041b518419c2e5958d3efc/1476664148421/Best-Website-Background-Images10.jpg?format=1500w);
+
+}
+
 .title {
   font-family: 'Audiowide', cursive;
   text-align: center;
   font-size: 75px;
+  color: white;
 }
 
 .para {
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
     line-height: 1.4em;
+    padding-left: 10%;
+    padding-right: 10%
+    color:white;
+
+}
+p {
+ color: white;
 
 
 }
+
 .vid {
-    
+    padding-left: 28%;
+}
+
+.sub {
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+  color: white;
 }
