@@ -7,8 +7,44 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
     <link rel="stylesheet" href="CodeCamp.js">
     <link rel="stylesheet" href="CodeCamp.css">
+    <link rel="stylesheet" href="bootstrap.css">
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <a href="#" class="navbar-brand">Navbar</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+        <div class="collapse-navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Link</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Another Action</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-control my-2 my-lg-0" action="index.html" method="post">
+            <input type="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+      </button>
+    </nav>
+
     <div class="title">
           <h1>Pong 3D</h1>
     </div>
