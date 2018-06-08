@@ -3,12 +3,41 @@ body {
 
 }
 
+ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font-family: 'Audiowide', cursive;
+  text-decoration-color: black;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+
 .title {
   font-family: 'Audiowide', cursive;
   text-align: center;
   color: white;
   border-bottom: 2px solid white;
-      
+
 }
 
 .para {
