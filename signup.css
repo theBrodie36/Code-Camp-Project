@@ -3,6 +3,15 @@ body {
 
 }
 
+h1 {
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+  font-size: 70px;
+  color: white;
+  padding-bottom: 5%;
+  border-bottom: 2px solid white;
+}
+
 ul {
 
     list-style-type: none;
@@ -26,45 +35,6 @@ li a {
     text-decoration: none;
 }
 
-
 li a:hover {
     background-color: #111;
-}
-
-
-.title {
-  font-family: 'Audiowide', cursive;
-  text-align: center;
-  color: white;
-  border-bottom: 2px solid white;
-
-}
-
-.para {
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-align: center;
-    line-height: 1.4em;
-    
-    color:white;
-
-}
-p {
- color: white;
-
-
-}
-
-.vid {
-    padding-left: 28%;
-}
-
-.sub {
-  font-family: 'Audiowide', cursive;
-  text-align: center;
-  color: white;
-
-}
-
-h1 {
-  font-size: 75px;
 }
