@@ -1,0 +1,40 @@
+.paddle {
+  background-color: white;
+  height:100px;
+  width:10px;
+  position: absolute;
+}
+
+.score {
+  color: white;
+  position: absolute;
+}
+
+body {
+  background-color: black;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+#PaddleL{
+  left: 5%;
+}
+
+#PaddleR {
+  right: 5%;
+}
+
+#ScoreL {
+  left: 10%;
+}
+#ScoreR {
+  right: 10%;
+}
