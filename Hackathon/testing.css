@@ -1,0 +1,21 @@
+h1 {
+  border-style: groove;
+  border-bottom: 10px;
+  border-color: pink;
+  text-align: center;
+  top: 10px;
+
+}
+
+.h  {
+  border: 10px dotted pink;
+  float: right;
+
+}
+
+.a {
+  border: 10px dashed blue;
+  clear: right;
+  display: flex;    
+
+}

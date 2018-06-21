@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>testing</title>
+	</head>
+	<script type="text/javascript" src="testing.js">
+	</script>
+	<body>
+		<h1 id="home">Home</h1>
+		<li id="code">Code</li>
+		<li class="people">Kenneth</li>
+		<li class="people">Matthew</li>
+		<li class="people">Caleb</li>
+		<button type="button" name="button" id="magic">Magic</button>
+		<script>
+			var magic = document.getElementById('magic')
+
+			magic.addEventListener('click',function(){
+				document.getElementById('code').style.color='green'})	
+		</script>
+	</body>
+</html>

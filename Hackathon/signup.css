@@ -1,0 +1,120 @@
+body {
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExUYHSggGBoxGxUVITEhJSkrLi4uFx8zODMtNygtOisBCgoKDg0NFQ8PFSsZFRkrKysrKy0rKy0tLTctLS0rLTc3LSsrKys3LS0tNzc3Nzc3KystNzcrLSstLS0tNy0rK//AABEIALcBEwMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAIRABAAICAgIDAQEAAAAAAAAAAAERkfAxYSGhAnGBURL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwDiMSQzDUI0oCKlJMkyKjICsrfhAkCGmYaSrGUVFQAAABbQAAAAAAAAAAAAAAAAAWG4Yb+KVYoWzMo0tFESojCKktMo1DICqyAqC0CC0gAAAAAAAAAAAAApMAgAAoLiCgmDXxZa+JVhMgqNRFlFoRlAVkMAC39F9oYFW+y+5L+i+0FvuUvv0t9+i+/QMz9i4J/FECgQRVroEpFyt9gyNX3BgVka/ISRAEBUUFAEUAAa+LLXxWpEWEkQGmVF4yArIAAioClgCxP0uGVwimDB+QV1GQK6Ra6RQwv4gCmEXAGCuiuklAQFQAAW0AaooEaQUBGviysKytFJa2ilLJaWKyArIAAgoAALG2fhvkrpFK69ldeyuiugK69mSuvZkEAUUwWiB+IqKgAAAAACwrKwLGhLEXT/ACizKUqULKKELLKQFAAABFRQAAXfJXRvkRSuiuvZvJvIFdewwAG+BFFTCphARUVAAAAAAAAAAGiARQkAQKFQAkAAEUAAN6Bd8mAwimEwu8G8KJhcGcG8IAVsG+QDeDfBkERUVBUUAVJFqDSBiACAANLRCo0iLIAioIkqSioCoAEgAKBvgyb/AA3lFMm8m8pgF3kyYQFwZEAFRQQBAFBFhAFCJVGkRRUxBUEasSZLRSZIRYVFIURUlAVFEUEkJIABQEwu/wAMooZwG8gZTeFxk3kEFRQBBBUAURRRFEMRQUUBGgAGRaFYRYlAFmRABSgAACSCSAFRQEU3kEXeDeTeUU3g3g3k3kDCFioIACiAqKUKKgigqAAAogDTMyvK0DCxC/JIVlqUiAlFJlIapAQUUQgkgQBQQVBQAQsAAAEBQRYEBQEaAAAAAAABGk/0AVGrBTSwEEmSgBUACUBQUBBAFVABUAQEAUoAJQAFgBVQEUAVABFAFH//2Q==);
+
+}
+
+ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font-family: 'Audiowide', cursive;
+  text-decoration-color: black;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+h1 {
+  font-size: 70px;
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+  color: white;
+  padding-bottom: 5%;
+  border-bottom: 2px solid white;
+}
+
+form {
+  color: white;
+
+}
+
+<style type="text/css">
+.form-style-4{
+    width: 450px;
+    font-size: 16px;
+    background: #495C70;
+    padding: 30px 30px 15px 30px;
+    border: 5px solid #53687E;
+}
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button],
+.form-style-4 input[type=text],
+.form-style-4 input[type=email],
+.form-style-4 textarea,
+.form-style-4 label
+{
+    font-family: 'Audiowide', cursive;
+    font-size: 16px;
+    color: #fff;
+
+}
+.form-style-4 label {
+    display:block;
+    margin-bottom: 10px;
+}
+.form-style-4 label > span{
+    display: inline-block;
+    float: left;
+    width: 150px;
+}
+.form-style-4 input[type=text],
+.form-style-4 input[type=email]
+{
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed #83A4C5;
+    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+}
+.form-style-4 textarea{
+    font-style: italic;
+    padding: 0px 0px 0px 0px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px dashed #83A4C5;
+    width: 275px;
+    overflow: hidden;
+    resize:none;
+    height:20px;
+}
+
+.form-style-4 textarea:focus,
+.form-style-4 input[type=text]:focus,
+.form-style-4 input[type=email]:focus,
+.form-style-4 input[type=email] :focus
+{
+    border-bottom: 1px dashed #D9FFA9;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button]{
+    background: #576E86;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    border-radius: 5px;
+    color: #A8BACE;
+}
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover{
+background: #394D61;
+}
+</style>

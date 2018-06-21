@@ -1,0 +1,70 @@
+body {
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExUYHSggGBoxGxUVITEhJSkrLi4uFx8zODMtNygtOisBCgoKDg0NFQ8PFSsZFRkrKysrKy0rKy0tLTctLS0rLTc3LSsrKys3LS0tNzc3Nzc3KystNzcrLSstLS0tNy0rK//AABEIALcBEwMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAIRABAAICAgIDAQEAAAAAAAAAAAERkfAxYSGhAnGBURL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwDiMSQzDUI0oCKlJMkyKjICsrfhAkCGmYaSrGUVFQAAABbQAAAAAAAAAAAAAAAAAWG4Yb+KVYoWzMo0tFESojCKktMo1DICqyAqC0CC0gAAAAAAAAAAAAApMAgAAoLiCgmDXxZa+JVhMgqNRFlFoRlAVkMAC39F9oYFW+y+5L+i+0FvuUvv0t9+i+/QMz9i4J/FECgQRVroEpFyt9gyNX3BgVka/ISRAEBUUFAEUAAa+LLXxWpEWEkQGmVF4yArIAAioClgCxP0uGVwimDB+QV1GQK6Ra6RQwv4gCmEXAGCuiuklAQFQAAW0AaooEaQUBGviysKytFJa2ilLJaWKyArIAAgoAALG2fhvkrpFK69ldeyuiugK69mSuvZkEAUUwWiB+IqKgAAAAACwrKwLGhLEXT/ACizKUqULKKELLKQFAAABFRQAAXfJXRvkRSuiuvZvJvIFdewwAG+BFFTCphARUVAAAAAAAAAAGiARQkAQKFQAkAAEUAAN6Bd8mAwimEwu8G8KJhcGcG8IAVsG+QDeDfBkERUVBUUAVJFqDSBiACAANLRCo0iLIAioIkqSioCoAEgAKBvgyb/AA3lFMm8m8pgF3kyYQFwZEAFRQQBAFBFhAFCJVGkRRUxBUEasSZLRSZIRYVFIURUlAVFEUEkJIABQEwu/wAMooZwG8gZTeFxk3kEFRQBBBUAURRRFEMRQUUBGgAGRaFYRYlAFmRABSgAACSCSAFRQEU3kEXeDeTeUU3g3g3k3kDCFioIACiAqKUKKgigqAAAogDTMyvK0DCxC/JIVlqUiAlFJlIapAQUUQgkgQBQQVBQAQsAAAEBQRYEBQEaAAAAAAABGk/0AVGrBTSwEEmSgBUACUBQUBBAFVABUAQEAUoAJQAFgBVQEUAVABFAFH//2Q==);
+
+}
+
+ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font-family: 'Audiowide', cursive;
+  text-decoration-color: black;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color: #111;
+}
+
+
+.title {
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+  color: white;
+  border-bottom: 2px solid white;
+
+}
+
+.para {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    line-height: 1.4em;
+    
+    color:white;
+
+}
+p {
+ color: white;
+
+
+}
+
+.vid {
+    padding-left: 28%;
+}
+
+.sub {
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+  color: white;
+
+}
+
+h1 {
+  font-size: 75px;
+}
