@@ -1,40 +1,62 @@
-.paddle {
-  background-color: white;
-  height:100px;
-  width:10px;
-  position: absolute;
-}
+html,body {
+		padding: 0;
+		margin: 0;
+    background-color:black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+	}
 
-.score {
-  color: white;
-  position: absolute;
-}
+	#left-paddle {
+		background-color: white;
+		left: 10px;
+    height: 200px;
+	}
 
-body {
-  background-color: black;
-}
+	#right-paddle {
+		background-color: white;
+		right: 10px;
+    height: 200px;
+	}
 
-.ball {
-  width: 20px;
-  height: 20px;
-  background-color: white;
+	.paddle {
+		top: 0;
+    bottom: 500;
+		width: 10px;
+		position: absolute;
+	}
 
-  position: absolute;
-  left: 50px;
-  top: 50px;
-}
+	.ball {
+		width: 20px;
+		height: 20px;
+		background-color: white;
 
-#PaddleL{
-  left: 5%;
-}
+		position: absolute;
+		left: 50px;
+		top: 50px;
+	}
 
-#PaddleR {
-  right: 5%;
-}
+	.score {
+		position: absolute;
+		top: 0;
+    color:white;
+    font-family: 'Press Start 2P', cursive;
+	}
 
-#ScoreL {
-  left: 10%;
-}
-#ScoreR {
-  right: 10%;
+	#left-score {
+		left: 10%;
+	}
+
+	#right-score {
+		right: 10%;
+	}
+
+#text{
+    position: absolute;
+    display:none;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
 }

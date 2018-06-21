@@ -1,159 +1,259 @@
-'use strict';
-// Variables
+"use strict";
 
-// Paddles
-var PaddleL = document.getElementById('PaddleL');
-var PaddleR = document.getElementById('PaddleR');
+var paddleLeft = document.getElementById("left-paddle");
+var paddleRight = document.getElementById("right-paddle");
+var ball = document.getElementById("ball");
 
-var PaddleLPos = 0;
-var PaddleRPos = 0;
+var paddleLeftTop = 0;
+var paddleRightTop = 0;
+var paddleLeftBottom = 500;
+var paddleRightBottom = 500;
+var paddleLeftBottom = 500;
+var paddleRightBottom = 500;
+var paddleLeftHeight = 200;
+var paddleRightHeight = 200;
 
-var PaddleLHeight = 100;
-var PaddleRHeight = 100;
+var paddleRightDirection = 0;
+var paddleRightTimer;
 
-var PaddleTopL = 0;
-var PaddleTopR = 0;
+var paddleLeftDirection = 0;
+var paddleLeftTimer;
 
-var PaddleLDir = 0;
-var PaddleLTimer;
+var oldballXdir;
+var oldballYdir;
 
-var PaddleRDir = 0;
-var PaddleRTimer;
+paddleLeft.style.top = 0;
+paddleRight.style.top = 0;
+paddleLeft.style.bottom = 500;
+paddleRight.style.bottom = 500;
 
-PaddleL.style.top = 0;
-PaddleR.style.top = 0;
+var ballXPos = 50;
+var ballYPos = 50;
+var ballXDir = 5;
+var ballYDir = 5;
+var ballWidth = 20;
+var ballHeight = 20;
 
-// Ball
-var ball = document.getElementById('ball');
+var leftScoreDisplay = document.getElementById("left-score");
+var rightScoreDisplay = document.getElementById("right-score");
+var leftScore = 0;
+var rightScore = 0;
 
-var BallXPos = 50;
-var BallYPos = 50;
-
-var BallXDir = 5;
-var BallYDir = 5;
-
-var BallWidth = 20;
-var BallHeight = 20;
-
-//Score
-var DisScoreL = document.getElementById('ScoreL');
-var DisScoreR = document.getElementById('ScoreR');
-
-var ScoreL = 0;
-var ScoreR = 0;
+var windowsizewidth = window.innerWidth;
+var windowsizeheight = window.innerHeight;
 
 
-// Main Code
-
-// Updates Score
-function UpdateScore() {
-    DisScoreL.innerHtml = ScoreL;
-    DisScoreR.innerHtml = ScoreR;
-}
-// Ball Movement
-function BallAnim() {
-		var newBallXPos = BallXPos + BallXDir;
-		var newBallYPos = BallYPos + BallYDir;
-
-		if (newBallXPos + BallWidth > window.innerWidth) {
-			BallXDir = -Math.abs(BallXDir);
-		}
-		if (newBallYPos + BallHeight > window.innerHeight) {
-			BallYDir = -Math.abs(BallYDir);
-		}
-		if (newBallXPos < 0) {
-			BallXDir = Math.abs(BallXDir);
-		}
-		if (newBallYPos < 0) {
-			BallYDir = Math.abs(BallYDir);
-		}
-
-		BallXPos += BallXDir;
-		BallYPos += BallYDir;
-
-		if (BallXPos < 20 &&
-			(BallYPos + 20 < PaddleTopL ||
-			 BallYPos > PaddleTopL + PaddleLHeight)) {
-			ScoreR += 1;
-			updateScoreDisplay();
-		}
-		if (BallXPos + 20 > window.innerWidth - 20 &&
-			(BallYPos + 20 < PaddleTopR ||
-			 BallYPos > PaddleTopR + PaddleRHeight)) {
-			 ScoreL += 1;
-			updateScoreDisplay();
-		}
-		ball.style.top = BallYPos + 'px';
-		ball.style.left = BallXPos + 'px';
-	}
-
-// Paddles Animation
-function PaddleRAnim() {
-		PaddleTopR += PaddleRDir;
-		PaddleR.style.top = PaddleTopR + 'px';
-	}
-
-function PaddleLAnim() {
-    PaddleTopL += PaddleLDir;
-    PaddleL.style.top = PaddleTopL + `px`;
+function updateScoreDisplay() {
+  leftScoreDisplay.innerHTML = leftScore;
+  rightScoreDisplay.innerHTML = rightScore;
 }
 
-// Ball Movement timer
-setInterval(BallAnim, 20);
 
+
+function moveBall() {
+  var newBallXPos = ballXPos + ballXDir;
+  var newBallYPos = ballYPos + ballYDir;
+
+  if (newBallXPos + ballWidth > window.innerWidth + 50) {
+    ballXPos = windowsizewidth / 2;
+    ballYPos = windowsizeheight / 2;
+    ballXDir = -Math.abs(ballXDir);
+    leftScore += 1;
+    updateScoreDisplay();
+  }
+  if (newBallYPos + ballHeight > window.innerHeight) {
+    ballYDir = -Math.abs(ballYDir);
+  }
+  if (newBallXPos < -50) {
+    ballXPos = windowsizewidth / 2;
+    ballYPos = windowsizeheight / 2;
+    ballXDir = Math.abs(ballXDir);
+    rightScore += 1;
+    updateScoreDisplay();
+  }
+
+if (
+			(ballYPos + 20 > paddleLeftTop &&
+			 ballYPos < paddleLeftTop + paddleLeftHeight) && (newBallXPos < 10)) {
+		    ballXDir = Math.abs(ballXDir)
+		}
+		if (
+			(ballYPos + 20 > paddleRightTop &&
+			 ballYPos < paddleRightTop + paddleRightHeight) && (newBallXPos > window.innerWidth - 30)) {
+			ballXDir = -Math.abs(ballXDir)
+		}
+  if (newBallYPos < 0) {
+    ballYDir = Math.abs(ballYDir);
+  }
+
+  ballXPos += ballXDir;
+  ballYPos += ballYDir;
+
+  ball.style.top = ballYPos + "px";
+  ball.style.left = ballXPos + "px";
+}
+
+function moveRightPaddle() {
+  paddleRightTop += paddleRightDirection;
+  paddleRight.style.top = paddleRightTop + "px";
+}
+
+function moveLeftPaddle() {
+  paddleLeftTop += paddleLeftDirection;
+  paddleLeft.style.top = paddleLeftTop + "px";
+}
+
+setInterval(moveBall, 25);
+
+//speeding up the ball
 setInterval(function() {
-    if (BallXDir < 50) BallXDir *= 1.1;
-    if (BallYDir < 50) BallYDir *= 1.1;
-}, 10000)
-
-
-// Keydown Listener
-document.addEventListener('keydown', function(KeyDownEvent) {
-  switch (KeyDownEvent.code) {
-    case 'ArrowDown':
-      if (!PaddleRTimer) {
-        PaddleRDir = 10;
-        PaddleRTimer = setInterval(PaddleRAnim, 10);
+  if (ballXDir < 50) ballXDir *= 1.1;
+  if (ballYDir < 50) ballYDir *= 1.1;
+}, 10000);
+/*
+document.addEventListener("keydown", function(evt) {
+  switch (evt.code) {
+    case "ArrowDown":
+      if (!paddleRightTimer) {
+        paddleRightDirection = 10;
+        paddleRightTimer = setInterval(moveRightPaddle, 10);
       }
       break;
 
-    case 'ArrowUp':
-      if (!PaddleRTimer) {
-        PaddleRDir = -10;
-        PaddleRTimer = setInterval(PaddleRAnim, 10);
+    case "ArrowUp":
+      if (!paddleRightTimer) {
+        paddleRightDirection = -10;
+        paddleRightTimer = setInterval(moveRightPaddle, 10);
       }
       break;
 
-    case 'KeyS':
-      if (!PaddleLTimer) {
-        PaddleLDir = 10;
-        PaddleLTimer = setInterval(PaddleLAnim, 10);
+    case "KeyS":
+      if (!paddleLeftTimer) {
+        paddleLeftDirection = 10;
+        paddleLeftTimer = setInterval(moveLeftPaddle, 10);
       }
       break;
 
-    case 'KeyW':
-      if (!PaddleLTimer) {
-        PaddleLDir = -10;
-        PaddleLTimer = setInterval(PaddleLAnim, 10);
+    case "KeyW":
+      if (!paddleLeftTimer) {
+        paddleLeftDirection = -10;
+        paddleLeftTimer = setInterval(moveLeftPaddle, 10);
       }
       break;
   }
-  console.log(KeyDownEvent);
+  console.log(evt);
+});
+
+document.addEventListener("keyup", function(evt) {
+  switch (evt.code) {
+    case "ArrowDown":
+    case "ArrowUp":
+      clearInterval(paddleRightTimer);
+      paddleRightTimer = null;
+      break;
+
+    case "KeyS":
+    case "KeyW":
+      clearInterval(paddleLeftTimer);
+      paddleLeftTimer = null;
+      break;
+  }
+  console.log(evt);
+});*/
+
+document.addEventListener("keyup", function(e) {
+  var key = e.keyCode || e.which;
+//down arrow
+  if (key === 40) {
+    clearInterval(paddleRightTimer)
+    paddleRightTimer = null;
+
+  }
+//up arrow
+  if (key === 38) {
+    clearInterval(paddleRightTimer)
+    paddleRightTimer = null;
+
+  }
+  //w
+    if (key === 87) {
+      clearInterval(paddleLeftTimer)
+      paddleLeftTimer = null;
+
+    }
+  //s
+    if (key === 83) {
+      clearInterval(paddleLeftTimer)
+      paddleLeftTimer = null;
+
+    }
+})
+document.addEventListener("keydown", function(e) {
+  var key = e.keyCode || e.which;
+//down arrow
+  if (key === 40) {
+    if (!paddleRightTimer) {
+      paddleRightDirection = 10;
+      paddleRightTimer = setInterval(moveRightPaddle, 10);
+    }
+
+  }
+//up arrow
+  if (key === 38) {
+    if (!paddleRightTimer) {
+      paddleRightDirection = -10;
+      paddleRightTimer = setInterval(moveRightPaddle, 10);
+    }
+
+  }
+  //w
+    if (key === 87) {
+      if (!paddleLeftTimer) {
+        paddleLeftDirection = -10;
+        paddleLeftTimer = setInterval(moveLeftPaddle, 10);
+      }
+
+    }
+  //s
+    if (key === 83) {
+      if (!paddleLeftTimer) {
+        paddleLeftDirection = 10;
+        paddleLeftTimer = setInterval(moveLeftPaddle, 10);
+      }
+
+    }
 })
 
-document.addEventListener('keyup', function(KeyUpEvent) {
-		switch (KeyUpEvent.code) {
-			case 'ArrowDown':
-			case 'ArrowUp':
-				clearInterval(PaddleRTimer);
-				PaddleRTimer = null;
-				break;
 
-			case 'KeyS':
-			case 'KeyW':
-				clearInterval(PaddleLTimer);
-				PaddleLTimer = null;
-				break;
-		}
-		console.log(KeyUpEvent);
-	})
+
+var toggle = function() {
+    var on = false;
+    return function() {
+    if(!on) {
+        on = true;
+        document.getElementById("text").style.display = "none";
+        /*if (ballXDir) {
+          ballXDir = oldballXdir;
+          ballYDir = oldballYdir;
+        }*/
+        return;
+    }
+      document.getElementById("text").style.display = "block";
+      ballXDir = 0;
+      ballYDir = 0;
+    on = false;
+}
+}();
+
+toggle(); //Set OFF as default
+
+document.addEventListener('keydown',function(e) {
+   var key = e.keyCode || e.which;
+   if(key === 27) {
+      toggle();
+      console.log(oldballXdir);
+        oldballXdir = ballXDir;
+        oldballYdir = ballXDir;
+
+   }
+}, false);
